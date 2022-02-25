@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+	<html lang="en-GB">
+	
+        <head>
+		    {% include "includes/head.twig" %}
+		</head>
+		
+		<body>
+
+			{% include "includes/nav.twig" %}
+
+			{% include "includes/banner.twig" %}
+
+			{% include "includes/services.twig" %}
+			
+			{% include "includes/portfolio.twig" %}
+
+			{% include "includes/clients.twig" %}
+			
+			{% include "includes/about.twig" %}
+
+			<section class="section" id="contact">
+				<div class="container">
+					<div class="title">
+						<h2>CONTACT US</h2>
+						<div class="titleline"></div>
+					</div>
+					<div class="aboutext">
+						<p>If you have a potential project in mind, or if you just have a question to ask, then please feel free to get in touch today:</p>
+					</div>
+					{% include "includes/contact.twig" %}
+			    </div>
+			</section>
+			
+			{% include "includes/footer.twig" %}
+
+			{% include "includes/js.twig" %}
+            <script src="{{ theme_url }}/js/frugal-home.js"></script>
+
+		</body>
+		
+</html>

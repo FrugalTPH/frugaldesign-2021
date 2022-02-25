@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-12 col-md-6 gmap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9439.326302619285!2d-0.3327616!3d53.7390744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe2aae4f99e86476f!2sFrugal%20Consultancy%20%26%20Design%20Ltd.!5e0!3m2!1sen!2suk!4v1635763466681!5m2!1sen!2suk"  allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="col-12 col-md-6">
+
+        <form class="contact-form" method="post" action="{{ theme_url }}/contact.php" role="form">
+            
+            <div class="form-group">
+                <label for="form_name">Name:</label>
+                <input 
+                    type="text" 
+                    id="form_name" 
+                    name="inp_name"
+                    placeholder="Please enter your name" 
+                    pattern="[a-zA-Z][a-zA-Z ]+"
+                    title="Letters and spaces only."
+                    required
+                    >
+                    <div class="help-block with-errors"></div>
+                </input>
+            </div>
+
+            <div class="form-group">
+                <label for="form_email">Email:</label>
+                <input 
+                    type="email" 
+                    id="form_email" 
+                    name="inp_email" 
+                    placeholder="Please enter your email" 
+                    required
+                    >
+                    <div class="help-block with-errors"></div>
+                </input>
+            </div>
+
+            <div class="form-group">
+                <label for="form_phone">Phone (optional):</label>
+                <input 
+                    type="text" 
+                    id="form_phone" 
+                    name="inp_phone" 
+                    placeholder="Please enter your number" 
+                    pattern="^[0-9 ()+-]+$"
+                    title="Numbers, spaces, brackets and + or - only."
+                    >
+                    <div class="help-block with-errors"></div>
+                </input>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label for="form_message">Message:</label>
+                <textarea 
+                    id="form_message" 
+                    name="inp_message" 
+                    placeholder="Please enter your message" 
+                    rows="4" 
+                    required></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {# <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div> #}
+                        <div class="g-recaptcha" data-sitekey="6LciXiYdAAAAAGAIHsOt0W6DWc8YOH5T1D14vBsz" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                        <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-secondary btn-send"><span>Send Message</span></button>
+                </div>
+            </div>
+            
+        </form>
+
+    </div>
+
+</div>

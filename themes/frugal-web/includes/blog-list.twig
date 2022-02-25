@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2><a href="{{ page.url }}">{{ page.meta.Alt_Title }}</a></h2>
+        <p class="post-tags">By {{ page.author }} | {{ page.date|date('Y-m-d') }} {% if page.meta.tags %}| {{ page.meta.tags }} {% endif %}</p>
+    </div>
+    {% if page.meta.image %}
+        <div class="col-md-8">
+            <blockquote class="excerpt ecap-8">{{ page.meta.Alt_Description }}</blockquote>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ page.url }}"><img src={{ page.meta.image|url }} alt="{{ page.title }}" class="post-thumbnail"></a>
+        </div>
+    {% else %}
+        <div class="col-md-12">
+            <blockquote class="excerpt ecap-8">{{ page.meta.Alt_Description }}</blockquote>    
+        </div>
+    {% endif %}
+    {% if page.meta.Preview %}
+        <div class="col-md-12">
+            <p class="excerpt ecap-4">{{ page.meta.Preview }}</p>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+	<html lang="en-GB">
+    
+        <head>
+
+			{% include "includes/head.twig" %}
+            <link rel="stylesheet" href="{{ theme_url }}/css/markdown.css" />
+
+		</head>
+		
+		<body>
+
+            {% include "includes/blog-post-nav.twig" %}
+
+            <div id="main" role="main">
+                <div class="container blog-container">
+                   <div class="row">
+                        <div class="col-lg-8">
+                            <div class="post-block">
+                                <div class="title">
+                                    <h1>{{ meta.Alt_Title }}</h1>
+                                </div>
+                                <p class="post-tags">By {{ meta.author }} | {{ meta.date|date('Y-m-d') }} {% if meta.tags %}| {{ meta.tags }} {% endif %}</p>
+                                {% if meta.image %}
+                                    <img class="feature-meta-img" src="{{ meta.image|url }}" alt="{{ meta.title }}">
+                                {% endif %}
+                                {{ content }}
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        {% include "includes/blog-sidebar.twig" %}
+                    </div>
+                </div>
+            </div>
+
+			<section class="section" id="contact">
+				<div class="container">
+					<div class="title">
+						<h2>Leave a Message</h2>
+						<div class="titleline"></div>
+					</div>
+					<div class="aboutext">
+						<p>We'll endeavour to get back to you as soon as possible.</p>
+					</div>
+					{% include "includes/contact.twig" %}
+			    </div>
+			</section>
+
+            {% include "includes/footer.twig" %}
+
+            {% include "includes/js.twig" %}
+
+            <script src="{{ theme_url }}/js/frugal-home.js"></script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+
+        </body>
+
+</html>
+

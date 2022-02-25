@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+	<html lang="en-GB">
+    
+        <head>
+
+		    {% include "includes/head.twig" %}
+
+		</head>
+		
+		<body>
+
+            {% include "includes/blog-index-nav.twig" %}
+
+            <div id="main" role="main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="post-block">
+                                <div class="title">
+                                    <h1>BLOG</h1>
+                                </div>
+
+                                {{ content }}
+
+                                <div class="post">
+                                    {% for page in paged_pages|sort_by("time")|reverse if not page.hidden %}
+                                        {% include "includes/blog-list.twig" %}
+                                    {% endfor %}
+                                </div>
+
+                               <div class="paginate">
+                                    {% if prev_page_url or next_page_url %}
+                                        <div class="row">
+                                            <div class="col-md-4 ">
+                                                {% if prev_page_url %}
+                                                    <p><a href="{{ prev_page_url }}">&larr; Previous Page</a></p>
+                                                {% else %}
+                                                    <p>~</p>
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p>{{ page_of_page }}</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                {% if next_page_url %}
+                                                    <p><a href="{{ next_page_url }}">Next Page &rarr;</a></p>
+                                                {% else %}
+                                                    <p>~</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        
+
+
+                        </div>
+                        <div class="col-lg-4">
+                            {% include "includes/blog-sidebar.twig" %}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            {% include "includes/footer.twig" %}
+
+            {% include "includes/js.twig" %}
+            <script src="{{ theme_url }}/js/frugal-home.js"></script>
+
+        </body>
+
+</html>

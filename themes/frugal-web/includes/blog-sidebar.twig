@@ -1,0 +1,40 @@
+<div class="postsidebar">
+
+    <div class="recent-posts">
+        <h3>Recent Posts</h3>
+        <ul>
+            {% for page in paged_pages|sort_by("time")|reverse|slice(0,5) if not page.hidden %}
+                <li><a href="{{ page.url }}">{{ page.meta.Alt_Title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="get-in-touch">
+        <p><b>phone:</b> <a href="tel:+44(0)7376718310">+44 (0)7376 718 310</a><br>
+        <b>email:</b> <a href="mailto:hello@frugaldesign.co.uk">hello@frugaldesign.co.uk</a><br>
+    </div>
+
+    {# <a class="btn btn-primary" href="" onclick="Calendly.initPopupWidget({url: 'https:\/\/calendly.com\/tom-frugaldesign\/discuss'});return false;">Arrange a call (or zoom) back!</a> #}
+
+    <div class="social-share">
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0" nonce="gb7M5Xhk"></script>
+
+        <span class="li-share-button">
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_GB</script>
+            <script type="IN/Share" data-url="{{ url }}"></script>
+        </span>
+
+        <span class="fb-share-button" data-href="{{ url }}" data-layout="button" data-size="small">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fpico2%2Fblog%2Farticle-1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+        </span>
+
+        <span class="tw-share-button">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </span>
+
+    </div>
+
+</div>

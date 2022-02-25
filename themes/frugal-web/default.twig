@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+	<html lang="en-GB">
+    
+        <head>
+		    {% include "includes/head.twig" %}
+		</head>
+		
+		<body>
+
+            {% include "includes/nav.twig" %}
+
+            <div id="main" role="main">
+                <div class="container">
+                    {{ content }}
+                </div>
+            </div>
+
+            {% include "includes/footer.twig" %}
+
+            {% include "includes/js.twig" %}
+            <script src="{{ theme_url }}/js/frugal-home.js"></script>
+
+        </body>
+        
+</html>

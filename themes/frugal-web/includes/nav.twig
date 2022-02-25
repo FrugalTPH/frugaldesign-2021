@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{{ base_url }}"><img src="{{ theme_url }}/img/logo_frugal-full.svg" alt="Frugal Consultancy & Design Ltd"/></a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <img src="{{ theme_url }}/img/nav.webp" alt="Nav Button"/>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto" id="top-menu">
+                <li class="nav-item"><a class="nav-link" href="{{ base_url }}/#about">ABOUT</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">SERVICES<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ base_url }}/mechanical-engineering">Mechanical</a></li>
+                            <li><a href="{{ base_url }}/structural-design">Structural</a></li>
+                            <li><a href="{{ base_url }}/design-coordination">Coordination</a></li>
+                            <li><a href="{{ base_url }}/systems-development">Systems</a></li>
+                            {# <li><a href="{{ base_url }}/analysis-and-code-checking">Analysis</a></li> #}
+                            {# <li><a href="{{ base_url }}/3d-and-2d-cad">CAD</a></li> #}
+                        </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ base_url }}/#clients">CLIENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ base_url }}/blog">BLOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
